@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+    <div>
+        <img></img>
+    </div>
+    <script>
+        let but = document.querySelector("button")
+        let img = document.querySelector("img")
+        but.addEventListener("click", () => {
+            fetch("https://pokeapi.co/api/v2/pokemon/ditto/")
+            .then(response => response.json())
+            .then(dado => {
+                console.log(dado)
+                img.src = dado.sprites.front_default
+            })
+
+        })
+    </script>
+</body>
+</html>
